@@ -1,0 +1,94 @@
+.note {
+    padding: 20px;
+    position: relative;
+    flex: 1;
+}
+
+.title {
+    margin-bottom: 10px;
+    font-size: 36px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date,
+.symbols {
+    color: var(--secondary-text-color);
+    font-size: 14px;
+}
+
+.content {
+    font-size: 18px;
+    padding-top: 20px;
+}
+
+input {
+    border: none;
+    background: transparent;
+    color: inherit;
+    outline: none;
+    width: 100%;
+    white-space: wrap;
+    max-width: 100%;
+
+    &::placeholder {
+        font-family: inherit;
+        color: var(--secondary-text-color);
+        font-size: 36px;
+    }
+}
+
+textarea {
+    border: none;
+    background: transparent;
+    color: inherit;
+    outline: none;
+    width: 100%;
+    font-family: inherit;
+    resize: none;
+    height: 100%;
+
+    &::placeholder {
+        font-family: inherit;
+        color: var(--secondary-text-color);
+        font-size: 18px;
+    }
+}
+
+.action {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 70vh;
+    right: 20px;
+    background-color: var(--accent-color);
+    cursor: pointer;
+    transition: background-color 0.1s linear;
+
+    // &:hover {
+    //     background-color: darken($color: var(--accent-color), $amount: 20%);
+    // }
+}
+
+.edit,
+.apply {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        width: 20px;
+        height: 20px;
+        fill: #fff;
+    }
+}

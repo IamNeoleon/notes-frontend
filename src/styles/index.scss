@@ -1,0 +1,262 @@
+@import "./vars-dark.scss";
+
+a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--background-primary);
+    color: var(--primary-text-color);
+
+    &.light-theme {
+        @import './vars-light.scss';
+
+        & {
+            background-color: var(--background-primary);
+            color: var(--primary-text-color);
+        }
+    }
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+button {
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+// welcome
+.welcome {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 200px;
+    text-align: center;
+}
+
+.welcome__title {
+    color: var(--highlight-color);
+    font-size: 76px;
+    font-weight: 600;
+}
+
+.welcome__text {
+    font-size: 22px;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.welcome__start {
+    font-size: 22px;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 15px 50px;
+    margin-top: 50px;
+    font-weight: 500;
+    transition: all 0.2s linear;
+    border-radius: 5px;
+
+    &:hover {
+        color: #000;
+        background-color: #fff;
+    }
+}
+
+// header
+
+.header {
+    background-color: var(--background-tertiary);
+    color: var(--primary-text-color);
+}
+
+.header__inner {
+    max-width: 800px;
+    padding: 15px 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav__link,
+.header__profile {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.1s linear;
+
+    &:hover {
+        background-color: var(--background-primary);
+    }
+
+    span {
+        margin-left: 10px;
+        font-size: 16px;
+        font-family: inherit;
+        font-weight: 600;
+    }
+}
+
+.header__profile {
+    position: relative;
+}
+
+.header__actions {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    z-index: 10;
+    transition: all 0.2s linear;
+    opacity: 0;
+    transform: translate(0, -20px);
+    pointer-events: none;
+
+    &.visible {
+        opacity: 1;
+        transform: translate(0, 0);
+        pointer-events: all;
+    }
+}
+
+.header__action {
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+}
+
+.header__info {
+    display: flex;
+    align-items: center;
+}
+
+// pages
+
+.auth {
+    display: flex;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard {}
+
+.notes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    position: relative;
+
+    a {
+        display: block;
+        overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 425px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.notePage {}
+
+.note-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+    svg {
+        cursor: pointer;
+    }
+}
+
+.note-back {
+    transition: transform 0.2s linear;
+
+    &:hover {
+        transform: translate(-5px, 0);
+    }
+}
+
+.note-delete {
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+        transform: translate(0, -5px);
+    }
+}
+
+.add-note {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 70vh;
+    right: 20px;
+    background-color: var(--accent-color);
+    cursor: pointer;
+    transition: background-color 0.1s linear;
+
+    // &:hover {
+    //     background-color: darken($color: var(--accent-color), $amount: 20%);
+    // }
+}

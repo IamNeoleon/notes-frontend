@@ -1,0 +1,32 @@
+.card {
+    padding: 20px 20px 15px;
+    background-color: var(--background-tertiary);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--header-color);
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.description {
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 5px 0;
+    color: var(--primary-text-color);
+}
+
+.date {
+    color: var(--secondary-text-color);
+    padding-top: 5px;
+    font-size: 14px;
+    text-align: right;
+}
